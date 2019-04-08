@@ -530,7 +530,7 @@ service vendor.esepmdaemon /system/vendor/bin/esepmdaemon
     user system
     group nfc
 
-service vendor.wcnss-service /system/bin/wcnss_service
+service vendor.wcnss-service /system/vendor/bin/wcnss_service
     class main
     user system
     group system wifi radio
@@ -802,11 +802,6 @@ service vendor.loc_launcher /system/vendor/bin/loc_launcher
     user gps
     group gps
     writepid /dev/cpuset/system-background/tasks
-
-service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
-    class core
-    user root
-    group root
 
 on property:hw.fm.init=0
     write /sys/module/radio_iris_transport/parameters/fmsmd_set 0
